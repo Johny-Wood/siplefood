@@ -1,16 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Simple Food</title>
   <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
 
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a class="logo" href="#">
+          <img class="logo__img" src="images/logo.png" alt="Логотип сайта">
+        </a>
 
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__list-item">
+              <a class="menu__list-link menu__list-link--active" href="#">Главная</a>
+            </li>
+            <li class="menu__list-item">
+              <a class="menu__list-link" href="#">Блюда</a>
+            </li>
+            <li class="menu__list-item">
+              <a class="menu__list-link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
 
+        <div class="user-nav">
+          <a class="user-nav__link" href="">
+            <img class="user-nav__link-img" src="images/icons/search-icon.svg" alt="Поиск по сайту">
+            <span class="sr-only">Поиск по сайту</span>
+          </a>
+          <a class="user-nav__link" href="">
+            <img class="user-nav__link-img" src="images/icons/cart-icon.svg" alt="Корзина покупок">
+            <span class="sr-only">Корзина покупок</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-top__block footer-top__block-logo">
+          <a class="logo footer-top__logo" href="#">
+            <img class="logo__img" src="images/logo.png" alt="Логотип сайта">
+          </a>
+
+          <form class="footer-form" action="#">
+            <input class="footer-form__input" type="email" placeholder="Ваш email" required>
+            <span class="sr-only">Ваш адресс электронной почты</span>
+            <button class="button footer-form__button" type="submit">Подписаться</button>
+          </form>
+        </div>
+
+        <div class="footer-top__block">
+          <h6 class="footer-top__title">Как это работает</h6>
+          <ul class="footer-top__list">
+            <li class="footer-top__item">
+              <a class="footer-top__link" href="#">Продукты</a>
+            </li>
+            <li class="footer-top__item">
+              <a class="footer-top__link" href="#">Блюда</a>
+            </li>
+            <li class="footer-top__item">
+              <a class="footer-top__link" href="#">Меню</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-top__block">
+          <h6 class="footer-top__title">О нас</h6>
+          <ul class="footer-top__list">
+            <li class="footer-top__item">
+              <a class="footer-top__link" href="#">Новости</a>
+            </li>
+            <li class="footer-top__item">
+              <a class="footer-top__link" href="#">Партнеры</a>
+            </li>
+            <li class="footer-top__item">
+              <a class="footer-top__link" href="#">ЧаВо</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-top__block">
+          <h6 class="footer-top__title">Скачать приложение</h6>
+          <ul class="footer-top__list">
+            <li class="footer-top__item">
+              <a class="footer-top__link" href="#">Блог</a>
+            </li>
+            <li class="footer-top__item">
+              <a class="footer-top__link" href="#">Что нового?</a>
+            </li>
+            <li class="footer-top__item">
+              <a class="footer-top__link" href="#">Карта сайта</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-top__block footer-contacts">
+          <ul class="footer-top__list footer-contacts__list">
+            <li class="footer-top__item footer-contacts__item">
+              ул. Смирнова 2/3
+            </li>
+            <li class="footer-top__item footer-contacts__item">
+              <a class="footer-top__link footer-contacts__link" href="tel:+79068057043">79068057043</a>
+              <a class="footer-top__link footer-contacts__link" href="mailto:support@sfood.com">support@sfood.com</a>
+            </li>
+          </ul>
+
+          <ul class="social-list">
+            <li class="social-list__item">
+              <a class="social-list__link" href="#" style="background-image: url(images/icons/facebook-icon.svg);"
+                target="_blank">
+                <span class="sr-only">Cсылка на наш facebook</span>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a class="social-list__link" href="#" style="background-image: url(images/icons/twitter-icon.svg);"
+                target="_blank">
+                <span class="sr-only">Cсылка на наш twitter</span>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a class="social-list__link" href="#" style="background-image: url(images/icons/instagram-icon.svg);"
+                target="_blank">
+                <span class="sr-only">Cсылка на наш instagram</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-bottom__copy">
+          © 2021 Simple Food
+        </p>
+      </div>
+    </div>
+  </footer>
   <script src="js/main.min.js"></script>
 </body>
+
 </html>
