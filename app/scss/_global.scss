@@ -7,6 +7,10 @@ body {
   display: flex;
   flex-direction: column;
   background-color: $silver-100;
+  @extend %rubic-400;
+  font-size: 20px;
+  line-height: 1.5;
+  color: $darkBlue-900;
 }
 
 .main {
@@ -33,7 +37,7 @@ body {
 }
 
 .title {
-  @extend %rubic-500;
+  font-weight: 500;
   font-size: 36px;
   line-height: 1.3;
   color: $darkBlue-900;
@@ -43,6 +47,10 @@ body {
 .logo {
   border: 2px solid transparent;
   outline: transparent;
+
+  &__img {
+    object-fit: contain;
+  }
 
   &:focus {
     border-radius: 5px;
@@ -58,8 +66,223 @@ body {
   }
 }
 
-.menu__list-link,
-.hero__link {
+.social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 39px;
+  height: 39px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: 6px 6px;
+  background-size: 21px 24px;
+  background-color: $silver-200;
+  outline: transparent;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  &-svg {
+    fill: $dark;
+    transition: fill 0.3s;
+
+    &--facebook {
+      width: 10px;
+      height: 21px;
+    }
+
+    &--twitter {
+      width: 21px;
+      height: 17px;
+    }
+
+    &--instagram {
+      width: 19px;
+      height: 19px;
+    }
+  }
+
+  &:focus {
+    background-color: #fff2ed;
+    border-color: $orange-500;
+  }
+
+  &:hover {
+    background-color: $orange-500;
+
+    & .social__link-svg {
+      fill: $white;
+    }
+  }
+
+  &:active {
+    background-color: #fff2ed;
+
+    & .social__link-svg {
+      fill: $orange-500;
+    }
+
+  }
+}
+
+.button-svg {
+  &--big {
+    width: 44px;
+    height: 44px;
+  }
+
+  &--large {
+    width: 14px;
+    height: 14px;
+    fill: $white;
+  }
+
+  &--around {
+    width: 24px;
+    height: 24px;
+    fill: $white;
+    transition: transform 0.3s;
+  }
+}
+
+.button {
+  padding: 11px 32px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: .03em;
+  background-color: $orange-900;
+  color: $white;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  outline: transparent;
+
+  &:focus {
+    color: $orange-900;
+    background-color: rgba(255, 122, 80, 0.1);
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+  }
+
+  &:hover {
+    color: $orange-900;
+    background-color: $white;
+    border-color: $orange-900;
+  }
+
+  &:active {
+    background-color: rgba(255, 122, 80, 0.1);
+    color: $orange-900;
+    box-shadow: 0 0 0;
+    border-color: transparent;
+    outline: transparent;
+  }
+
+  &--icon {
+    display: flex;
+    align-items: center;
+  }
+
+  &--big {
+    @extend %buttonEffects;
+    padding: 12px 28px 12px 28px;
+    border-radius: 5px;
+    border-color: $silver-200;
+    background-color: $white;
+    color: $darkBlue-900;
+    font-size: inherit;
+
+    & .button-svg--big {
+      margin: 0 10px 0 3px;
+      transition: fill 0.3s;
+    }
+
+    &.mixitup-control-active {
+      box-shadow: 0 0 0 0;
+      border-color: transparent;
+      background-color: $orange-900;
+      color: $white;
+
+      & .button-svg {
+        fill: $white;
+      }
+    }
+  }
+
+  &--large {
+    @extend %buttonEffects;
+    padding: 10px 29px 10px 44px;
+    border-radius: 5px;
+
+    & .button-svg--large {
+      margin: 0 15px 0 -18px;
+    }
+  }
+
+  &--small {
+    padding: 6px 18px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  &--around {
+    @extend %buttonEffects;
+    padding: 5px 27px;
+    border-radius: 20px;
+
+    &:hover {
+      & .button-svg {
+        transform: translateX(18px);
+      }
+    }
+
+    &:active {
+      & .button-svg {
+        fill: $orange-900;
+        transform: translateX(0px);
+      }
+    }
+  }
+
+  &--transparent {
+    position: relative;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    @extend %rubic-400;
+    color: $darkBlue-900;
+    font-size: 20px;
+    line-height: 1.5;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 2px;
+      right: 2px;
+      border-bottom: 1px solid $darkBlue-900;
+      transition: border-bottom 0.3s, text-shadow 0.3s;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0;
+      background-color: transparent;
+    }
+
+    &:hover {
+
+      &::before {
+        border-bottom: 1px solid transparent;
+      }
+    }
+
+    &:active {
+      background-color: transparent;
+      border-bottom: 1px solid transparent;
+      text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+    }
+  }
+}
+
+.link {
   border: 2px solid transparent;
   outline: transparent;
   transition: color 0.3s;
@@ -79,29 +302,108 @@ body {
   }
 }
 
-.button {
-  color: $white;
-  background-color: $orange-900;
-  border: 1px solid transparent;
-  transition: background-color 0.3s, color 0.3s;
-  outline: transparent;
+.product-cards {
+  margin: 0 30px 30px 0;
+  background-color: $white;
+  color: $dark;
 
-  &:focus {
-    color: $orange-900;
-    background-color: rgba(255, 122, 80, 0.1);
-    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
-  }
-
-  &:hover {
-    color: $orange-900;
-    background-color: $white;
-    border-color: $orange-900;
-  }
-
-  &:active {
-    background-color: rgba(255, 122, 80, 0.1);
-    color: $orange-900;
-    border-color: transparent;
+  &__link {
     outline: transparent;
+  }
+
+  &__img {
+    object-fit: cover;
+  }
+
+  &__title {
+    @include ellipsis(4);
+    max-width: 180px;
+    margin-bottom: 10px;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+
+    &--margin {
+      margin: 15px 0 20px 20px;
+    }
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  &__price {
+    @include ellipsis(1);
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: $darkBlue-900;
+    line-height: 1.4;
+  }
+
+  &__time {
+    @include ellipsis(1);
+    position: relative;
+    padding-left: 30px;
+    font-size: 18px;
+    line-height: 1.67;
+    font-weight: 300;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 22px;
+      height: 22px;
+      background-image: url(../images/sprite.svg#clock-icon);
+    }
+  }
+
+  &--small {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(20% - 30px);
+    padding: 25px 5px;
+    border: 1px solid $silver-200;
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 1.2;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $orange-900;
+    }
+  }
+
+  &--big {
+    width: calc(33.333% - 30px);
+    padding-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    line-height: 1.3;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: 0 3px 15px rgba(255, 104, 56, 0.5);
+    }
+  }
+}
+
+.dowload-ios,
+.dowload-android {
+  object-fit: contain;
+
+  &__img {
+    display: inline-block;
+    margin-right: 30px;
   }
 }
