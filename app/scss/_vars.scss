@@ -1,31 +1,88 @@
 $orange-900: #ff6838;
+$orange-500: #ff7a50;
 $silver-100: #f9faff;
 $silver-200: #ececec;
 $white: #ffffff;
 $gray: #c2c2c2;
 $darkBlue-900: #363853;
 $dark: #31352b;
+$bg: #e5e5e5;
+
+$xl: 1440px;
+$lg: 1230px;
+$md: 992px;
+$xs: 480px;
+$xxs: 360px;
 
 %rubic-400 {
-  font-family: 'Rubic-Regular',
+  font-family: 'Rubic',
     sans-serif;
   font-weight: 400;
 }
 
-%rubic-400i {
-  font-family: 'Rubic-Regular',
-    sans-serif;
-  font-weight: 400;
+%buttonEffects {
+  &:focus {
+    background-color: $white;
+    color: $darkBlue-900;
+
+    & .button-svg {
+      fill: $darkBlue-900;
+    }
+  }
+
+  &:hover {
+    background-color: rgba(255, 122, 80, 0.1);
+
+    & .button-svg {
+      fill: $orange-900;
+    }
+  }
+
+  &:active {
+    color: $darkBlue-900;
+
+    & .button-svg {
+      fill: $darkBlue-900;
+    }
+  }
 }
 
-%rubic-500 {
-  font-family: 'Rubic-Medium',
-    sans-serif;
-  font-weight: 500;
+%burger {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
 }
 
-%rubic-700 {
-  font-family: 'Rubic-Bold',
-    sans-serif;
-  font-weight: 700;
+
+@mixin ellipsis($rowCount: 1) {
+  @if $rowCount <=1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @else {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $rowCount;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin max-w($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin min-h($min-height) {
+  @media (min-height: $min-height) {
+    @content;
+  }
 }
