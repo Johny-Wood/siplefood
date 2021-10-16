@@ -6,6 +6,13 @@ $white: #ffffff;
 $gray: #c2c2c2;
 $darkBlue-900: #363853;
 $dark: #31352b;
+$bg: #e5e5e5;
+
+$xl: 1440px;
+$lg: 1230px;
+$md: 992px;
+$xs: 480px;
+$xxs: 360px;
 
 %rubic-400 {
   font-family: 'Rubic',
@@ -40,6 +47,16 @@ $dark: #31352b;
   }
 }
 
+%burger {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+
 
 @mixin ellipsis($rowCount: 1) {
   @if $rowCount <=1 {
@@ -55,5 +72,17 @@ $dark: #31352b;
     display: -webkit-box;
     -webkit-line-clamp: $rowCount;
     -webkit-box-orient: vertical;
+  }
+}
+
+@mixin max-w($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin min-h($min-height) {
+  @media (min-height: $min-height) {
+    @content;
   }
 }
